@@ -13,7 +13,7 @@ public class WindowedIntArrayToString implements
         Integer val;
         for (int i = 0; i < deviants.size(); i ++) {
             val = deviants.get(i);
-            deviantsString += Integer.toString(val);
+            deviantsString += Integer.toString(val) + ", ";
         }
         return new KeyValue<>(window.key(), deviantsString);
     }
