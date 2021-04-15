@@ -99,6 +99,8 @@ public class FindAnomalies {
         // LISTIFY INPUT
         // if streamInputWindowed has records 2,3,4 in window0, and 5,6 in window1,
         // then inputListTableWindowed has record [2,3,4] in window0, and [5,6] in window1.
+        // aslinda bir kere bu pisligi yaptiktan sonra her islemi streams'den gizli yapabiliriz
+        // ama streams'le yapilamayan tek kisim bu; o yuzden listify disinda bu cakalligi yapmadim :)
         KTable <Windowed<String>, ArrayList<Integer>> inputListTableWindowed =
                 streamInputWindowed.aggregate(new ListifyInit(), new ListifyAggregate(), windowIntArrayMat);
 
